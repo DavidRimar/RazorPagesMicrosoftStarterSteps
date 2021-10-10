@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesTemplate.Data;
 using RazorPagesTemplate.Model;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace RazorPagesTemplate.Pages.Games
 {
@@ -14,16 +15,31 @@ namespace RazorPagesTemplate.Pages.Games
     {
         private readonly RazorPagesTemplate.Data.RazorPagesGamesContext _context;
 
+        // CONSTRUCTOR
         public IndexModel(RazorPagesTemplate.Data.RazorPagesGamesContext context)
         {
             _context = context;
         }
 
+        // PROPERTIES
         public IList<Game> Game { get;set; }
 
+        [BindProperty(SupportsGet = true)]
+        public string HomeTeamSearchString { get; set; }
+        
+
+        // METHODS
         public async Task OnGetAsync()
         {
-            Game = await _context.Game.ToListAsync();
+            var games = from g in _context.Game
+                         select g;
+
+            if (!string.IsNullOrEmpty(HomeTeamSearchString))
+            {
+                games = games.Where(g => g.HomeTeamName.Contains(HomeTeamSearchString));
+            }
+
+            Game = await games.ToListAsync();
         }
     }
 }

@@ -43,15 +43,19 @@ namespace RazorPagesTemplate.Pages.Games
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            // if model state is invalid
             if (!ModelState.IsValid)
             {
+                // return the Edit Page
                 return Page();
             }
 
+            // save entity state
             _context.Attach(Game).State = EntityState.Modified;
 
             try
             {
+                // save changes to DB
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
