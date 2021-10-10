@@ -36,5 +36,8 @@ namespace RazorPagesTemplate.Model
         [Required]
         public int AwayTeamGoals { get; set; }
 
+        // Referee
+        public string Referee { get; set; }
+
     }
 }

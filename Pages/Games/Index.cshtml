@@ -33,7 +33,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Game[0].AwayTeamGoals)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game[0].Referee)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -50,6 +52,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AwayTeamGoals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Referee)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.GameID">Edit</a> |

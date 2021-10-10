@@ -26,31 +26,35 @@ namespace RazorPagesTemplate.Model
                         HomeTeamName = "Wolverhampton",
                         HomeTeamGoals = 2,
                         AwayTeamName = "Chelsea",
-                        AwayTeamGoals = 4
+                        AwayTeamGoals = 4,
+                        Referee = "Cesar Soto Grado"
                     },
 
                     new Game
                     {
-                        HomeTeamName = "Leicester",
+                        HomeTeamName = "Everton",
                         HomeTeamGoals = 1,
-                        AwayTeamName = "Burnley",
-                        AwayTeamGoals = 0
+                        AwayTeamName = "Stoke",
+                        AwayTeamGoals = 0,
+                        Referee = "Cesar Soto Grado"
                     },
 
                     new Game
                     {
                         HomeTeamName = "Southampton",
                         HomeTeamGoals = 1,
-                        AwayTeamName = "Newcastle",
-                        AwayTeamGoals = 1
+                        AwayTeamName = "Arsenal",
+                        AwayTeamGoals = 2,
+                        Referee = "Cesar Soto Grado"
                     },
 
                     new Game
                     {
-                        HomeTeamName = "West Ham",
-                        HomeTeamGoals = 2,
+                        HomeTeamName = "West Brom",
+                        HomeTeamGoals = 0,
                         AwayTeamName = "Norwich",
-                        AwayTeamGoals = 0
+                        AwayTeamGoals = 0,
+                        Referee = "Cesar Soto Grado"
                     }
                 );
                 context.SaveChanges();
